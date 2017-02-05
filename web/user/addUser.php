@@ -58,7 +58,7 @@
   <input type="submit" value="Submit">
   <h3><?php echo  $msg; $msg = ''; ?><h3>
   
-  <a href="../welcome.php">Back!</a>
+  <a href="index1.php">Back!</a>
 </form> 
    </body>
    

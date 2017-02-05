@@ -18,8 +18,8 @@ table, th, td {
   <h1>Attandence Management System Panel</h1>
   <Table>
   <tr>
-                    <td>><a href="index1.php">User Adminatration</a></td>
-					<td><a href="../notice/index1.php">Notice</a></td>
+                    <td>><a href="../user/index1.php">User Adminatration</a></td>
+					<td><a href="index1.php">Notice</a></td>
                     <td>Username: <?php echo $user_check;?></td>
                     <td>User Type: <?php echo $user_type; ?></td>
                     <td><a href = "../logout.php">Sign Out</a></td>
