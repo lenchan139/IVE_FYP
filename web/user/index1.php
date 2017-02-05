@@ -16,6 +16,7 @@ table, th, td {
 }
 </style>
    <body>
+	   <a href="addUser.php">>Add new user<</a>
       <table>
                  <tr>
                     <td>User Id</td>
