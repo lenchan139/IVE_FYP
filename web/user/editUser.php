@@ -55,6 +55,8 @@
    </head>
    
    <body>
+
+	   <?php include "sidebar1.php"; ?>
       
       <form action="editUser.php?editId=<?php echo $inId?>" method="post">
   username:<br>
@@ -75,6 +77,8 @@
   
   <a href="../welcome.php">Back!</a>
 </form> 
+
+	   <?php include "sidebar2.php"; ?>
    </body>
    
 </html>

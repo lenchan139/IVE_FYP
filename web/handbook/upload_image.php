@@ -3,7 +3,7 @@
    //session_start();
    $sClass = $_POST['class'];
    $sInType = $_POST['inType'];
- 
+   include "mainMenu.php";
    ?>
 <html>
 
@@ -12,13 +12,10 @@
    </head>
    
 <style>
-table, th, td {
-    border: 1px solid black;
-}
 </style>
    <body>
+	   <?php include "sidebar1.php";?>
 	   <?php
-// 允许上传的图片后缀
 $allowedExts = array( "png");
 $temp = explode(".", $_FILES["file"]["name"]);
 echo $_FILES["file"]["size"];
@@ -58,6 +55,7 @@ else
 	echo "Noa a vaild JPG file.";
 }
 	   ?>
+	   <?php include "sidebar2.php";?>
    </body>
    
 </html>

@@ -61,7 +61,8 @@
    </head>
    
    <body>
-      
+
+   <?php include "sidebar1.php";?>
       <form action="editNotice.php?editId=<?php echo $inId?>" method="post">
  Title:<br>
  <input type="text" name="title" value="<?php echo $oldtitle;?>">
@@ -83,6 +84,7 @@
   
   <a href="../welcome.php">Back!</a>
 </form> 
+	   <?php include "sidebar2.php";?>
    </body>
    
 </html>

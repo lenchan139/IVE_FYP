@@ -1,5 +1,5 @@
 <?php
 
-      header("location:../viewRule.php");
+      header("location:./viewRule.php");
  
 ?>

@@ -1,5 +1,5 @@
 <?php
 
-      header("location:index_event.php");
+      header("location:./viewSubmittion.php");
  
 ?>

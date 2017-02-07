@@ -53,6 +53,7 @@
    </head>
    
    <body>
+	   <?php include "sidebar1.php";?>
       
       <form action="editRule.php?editId=<?php echo $inId?>" method="post">
  Old Content:<br>
@@ -66,6 +67,7 @@
   
   <a href="../welcome.php">Back!</a>
 </form> 
+	   <?php include "sidebar2.php";?>
    </body>
    
 </html>

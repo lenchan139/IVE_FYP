@@ -13,11 +13,9 @@
    </head>
    
 <style>
-table, th, td {
-    border: 1px solid black;
-}
 </style>
    <body>
+	   <?php include "sidebar1.php";?>
 	   <form method="POST">
 	   Event: <select name="event">
             <?php
@@ -34,15 +32,14 @@ table, th, td {
           }
           ?> 
 	  </select>
-	  <br/><br/>
 	  <input type="submit" value="Search"></input>
 	   </form>
-      <table>
-                 <tr>
-                    <td>Class</td>
-                    <td>Student No.</td>
-                    <td>Student Name</td>
-					<td>Parent Name</td>
+      <table id="inTable">
+                 <tr id="inTable">
+                    <td id="inTable">Class</td>
+                    <td id="inTable">Student No.</td>
+                    <td id="inTable">Student Name</td>
+					<td id="inTable">Parent Name</td>
                     
                 </tr>
               <?php
@@ -65,11 +62,11 @@ table, th, td {
 				$parResult = mysqli_query($db,$parSql);
 				$parRow = mysqli_fetch_array($parResult,MYSQLI_ASSOC);
             ?>
-                <tr>
-                    <td><?php echo $studRow['class']?></td>
-                    <td><?php echo $studRow['student_id']?></td>
-					<td><?php echo $studRow['user_name']?></td>
-                    <td><?php echo $parRow['parent_name']; ?></td>
+                <tr id="inTable">
+                    <td id="inTable"><?php echo $studRow['class']?></td>
+                    <td id="inTable"><?php echo $studRow['student_id']?></td>
+					<td id="inTable"><?php echo $studRow['user_name']?></td>
+                    <td id="inTable"><?php echo $parRow['parent_name']; ?></td>
                 </tr>
                 <br>
             <?php

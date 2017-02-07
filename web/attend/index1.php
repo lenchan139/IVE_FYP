@@ -15,10 +15,11 @@
    
 <style>
 table, th, td {
-    border: 1px solid black;
 }
 </style>
    <body>
+
+	   <?php include "sidebar1.php";?>
 	   <a href="addUser.php"></a>
 	   <form method="POST">
 	   Class: <select name="class">
@@ -38,12 +39,12 @@ table, th, td {
 	  <br/>Date<input type="date" name="date" /><br/>
 	  <input type="submit" value="Search"></input>
 	   </form>
-      <table>
-                 <tr>
-                    <td>Class</td>
-                    <td>No.</td>
-                    <td>Name</td>
-                    <td>Attend?</td>
+      <table id="inTable">
+                 <tr id="inTable">
+                    <td id="inTable">Class</td>
+                    <td id="inTable">No.</td>
+                    <td id="inTable">Name</td>
+                    <td id="inTable">Attend?</td>
                     
                 </tr>
               <?php
@@ -56,10 +57,10 @@ table, th, td {
               //$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
             while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
             ?>
-                <tr>
-                    <td><?php echo $row['class']?></td>
-                    <td><?php echo $row['student_id']?></td>
-					<td><?php echo $row['user_name']?></td>
+                <tr id="inTable">
+                    <td id="inTable"><?php echo $row['class']?></td>
+                    <td id="inTable"><?php echo $row['student_id']?></td>
+					<td id="inTable"><?php echo $row['user_name']?></td>
 					<?php
 					$sid =  $row['student_id'];
 	                $sqlIn = 'SELECT * FROM attend WHERE stud_id=' . $sid . ' AND att_date=' . '"' . $sDate . '"';
@@ -73,7 +74,7 @@ table, th, td {
 					  $attendStatus = N;
 				  }
 					?>
-                    <td><?php echo $attendStatus; ?></td>
+                    <td id="inTable"><?php echo $attendStatus; ?></td>
                 </tr>
                 <br>
             <?php
@@ -84,6 +85,7 @@ table, th, td {
   <a href="../welcome.php">Back!</a>
 
       <h2><a href = "logout.php">Sign Out</a></h2>
+	  <?php include "sidebar2.php";?>
    </body>
    
 </html>

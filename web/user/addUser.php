@@ -39,6 +39,8 @@
    </head>
    
    <body>
+
+	   <?php include "sidebar1.php"; ?>
       <form action="addUser.php" method="post">
   username:<br>
   <input type="text" name="newUsername">
@@ -60,6 +62,8 @@
   
   <a href="index1.php">Back!</a>
 </form> 
+
+	   <?php include "sidebar2.php"; ?>
    </body>
    
 </html>

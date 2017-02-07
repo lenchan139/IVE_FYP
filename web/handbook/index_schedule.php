@@ -15,11 +15,9 @@
    </head>
    
 <style>
-table, th, td {
-    border: 1px solid black;
-}
 </style>
    <body>
+	   <?php include "sidebar1.php";?>
 	   <form method="POST">
 	   Month: <select name="class" required>
 		   <option value=""></option>
@@ -38,15 +36,15 @@ table, th, td {
 	  </select>
 	  <input type="submit" value="Go!"></input>
 	   </form>
-      <table>
-		  <tr>
-			  <td>Month</td>
-			  <td>Image</td>
-			  <td>Upload New...</td>
+      <table id="inTable">
+		  <tr id="inTable">
+			  <td id="inTable">Month</td>
+			  <td id="inTable">Image</td>
+			  <td id="inTable">Upload New...</td>
 				  
 		</tr>
-                 <tr>
-                 <td>
+                 <tr id="inTable">
+                 <td id="inTable">
             
               <?php
 			if($sClass!='' ){
@@ -61,10 +59,10 @@ table, th, td {
 			
             ?>
 		</td>
-		<td>
+		<td id="inTable">
 			<img src="upload/schedule_<?php echo $sClass;?>">
 		</td>
-	<td>
+	<td id="inTable">
 		<?php
 		if($sClass == ''){
 			echo"<h4>you need choose class first!";
@@ -88,6 +86,7 @@ Upload To:<input type="text" name="class" <?php if($sClass!=''){echo'value="' . 
   <a href="../welcome.php">Back!</a>
 
       <h2><a href = "logout.php">Sign Out</a></h2>
+	   <?php include "sidebar2.php";?>
    </body>
    
 </html>

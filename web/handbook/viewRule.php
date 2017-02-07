@@ -13,15 +13,13 @@
    </head>
    
 <style>
-table, th, td {
-    border: 1px solid black;
-}
 </style>
    <body>
+	   <?php include "sidebar1.php";?>
 	   <br/>
 	   <a href="./addRule.php">Add Rule</a>
 	   <br/>
-      <table>
+      <table id="inTable">
               <?php
               $sql = 'SELECT * FROM school_rule';
             $result = mysqli_query($db,$sql);
@@ -37,10 +35,10 @@ table, th, td {
 	  			$count=$count+1;
 	  		
 	  		?>
-                <tr>
-                    <td><?php echo $count;?></td>
-                    <td><?php echo $row['content'];?></td>
-                    <td><a href="editRule.php?editId=<?php echo $row['id']?>";>EDIT</a>
+                <tr id="inTable">
+                    <td id="inTable"><?php echo $count;?></td>
+                    <td id="inTable"><?php echo $row['content'];?></td>
+                    <td id="inTable"><a href="editRule.php?editId=<?php echo $row['id']?>";>EDIT</a>
                 </tr>
                 <br>
             <?php
@@ -50,6 +48,7 @@ table, th, td {
   <a href="../welcome.php">Back!</a>
 
       <h2><a href = "logout.php">Sign Out</a></h2>
+	   <?php include "sidebar2.php";?>
    </body>
    
 </html>

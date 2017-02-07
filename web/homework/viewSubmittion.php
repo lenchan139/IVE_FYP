@@ -15,10 +15,10 @@
    
 <style>
 table, th, td {
-    border: 1px solid black;
 }
 </style>
    <body>
+	   <?php include "sidebar1.php";?>
 	<script>
 	function validateForm() {
 	    var x = document.forms["myForm"]["class"].value;
@@ -65,12 +65,12 @@ table, th, td {
 	  </select>
 	  <input type="submit" value="Search"></input>
 	   </form>
-      <table>
-                 <tr>
-                    <td>Class</td>
-                    <td>No.</td>
-                    <td>Name</td>
-                    <td>Status</td>
+      <table id="inTable">
+                 <tr id="inTable">
+                    <td id="inTable">Class</td>
+                    <td id="inTable">No.</td>
+                    <td id="inTable">Name</td>
+                    <td id="inTable">Status</td>
                     
                 </tr>
               <?php
@@ -84,10 +84,10 @@ table, th, td {
             while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
             ?>
 			
-                <tr>
-                    <td><?php echo $row['class']?></td>
-                    <td><?php echo $row['student_id']?></td>
-					<td><?php echo $row['user_name']?></td>
+                <tr id="inTable">
+                    <td id="inTable"><?php echo $row['class']?></td>
+                    <td id="inTable"><?php echo $row['student_id']?></td>
+					<td id="inTable"><?php echo $row['user_name']?></td>
 					<?php
 					$sid =  $row['student_id'];
 	                $sqlIn = 'SELECT * FROM hw_checker WHERE stud_id=' . $sid . ' AND read_time=' . '"' . $sDate . '"'  . 'AND hw_id="' . $sHw_id . '"';
@@ -101,7 +101,7 @@ table, th, td {
 					  $sStatus = "N";
 				  }
 					?>
-                    <td><?php echo $sStatus; ?></td>
+                    <td id="inTable"><?php echo $sStatus; ?></td>
                 </tr>
                 <br>
             <?php
@@ -112,6 +112,8 @@ table, th, td {
   <a href="../welcome.php">Back!</a>
 
       <h2><a href = "logout.php">Sign Out</a></h2>
+
+   <?php include "sidebar2.php";?>
    </body>
    
 </html>
