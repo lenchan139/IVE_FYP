@@ -9,7 +9,7 @@
    
    if($_SESSION['type'] == 'officer'){
         $newus = mysqli_real_escape_string($db,$_POST['newUsername']);
-        $newpw = mysqli_real_escape_string($db,$_POST['newPassword']);
+        $newpw = sha1(mysqli_real_escape_string($db,$_POST['newPassword']));
         $newtype = mysqli_real_escape_string($db,$_POST['newType']);
         $newmail = mysqli_real_escape_string($db,$_POST['newMail']);
         

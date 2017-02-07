@@ -6,7 +6,7 @@
       // username and password sent from form 
       
       $myusername = mysqli_real_escape_string($db,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
+      $mypassword = sha1(mysqli_real_escape_string($db,$_POST['password'])); 
       
       $sql = "SELECT type FROM users WHERE username = '$myusername' and password = '$mypassword'";
       
