@@ -11,7 +11,7 @@
    
    $login_session = $row['username'];
    $msgs = 'Login Username' + $_SESSION['login_user'];
-   echo $msgs;
+   //echo $msgs;
    if(!isset($_SESSION['login_user'])){
       header("location:login.php");
    }

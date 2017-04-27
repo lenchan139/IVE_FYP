@@ -31,7 +31,8 @@ table, tr, td{
 		<!--sidebar here-->
 		<br/>
 		<table>
-		<tr><p><a  id="iaHover" href="index1.php">QR Code Generator</a></tr>
+		<tr><p><a  id="iaHover" href="index1.php">Pushed Notification</a></tr>
+		<tr><p><a  id="iaHover" href="PushNotify.php">Pushing New Notification</a></tr>
 		</table>
 		</td>
 		<td valign="top" id="mainBody">

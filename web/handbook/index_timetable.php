@@ -84,9 +84,7 @@ Upload To:<input type="text" name="class" <?php if($sClass!=''){echo'value="' . 
 		?>
 		</td></tr>
         </table>
-  <a href="../welcome.php">Back!</a>
 
-      <h2><a href = "logout.php">Sign Out</a></h2>
 	   <?php include "sidebar2.php";?>
    </body>
    

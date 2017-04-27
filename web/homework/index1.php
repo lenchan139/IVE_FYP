@@ -1,5 +1,5 @@
 <?php
 
-      header("location:./viewSubmittion.php");
+      header("location:./viewSmPre.php");
  
 ?>

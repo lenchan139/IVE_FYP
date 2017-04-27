@@ -12,6 +12,17 @@
 
    <head>
       <title>Welcome </title>
+	  <script src="../sorttable.js"></script>
+	  <style>
+
+	  /* Sortable tables */
+	  table.sortable thead {
+	      background-color:#eee;
+	      color:#666666;
+	      font-weight: bold;
+	      cursor: default;
+	  }
+	  </style>
    </head>
    
 <style>
@@ -36,7 +47,7 @@
 	  </select>
 	  <input type="submit" value="Go!"></input>
 	   </form>
-      <table id="inTable">
+      <table id="inTable" class="sortable">
 		  <tr id="inTable">
 			  <td id="inTable">Month</td>
 			  <td id="inTable">Image</td>
@@ -74,7 +85,7 @@ Choose File：<input id="file" name="file" type="<?php if($sClass!=''){echo "fil
 Upload To:<input type="text" name="class" <?php if($sClass!=''){echo'value="' .  $sClass . '""';}?> 				required  readonly/>
 <input type="hidden" name="inType" value="schedule"/>
 <input id="submit" type="<?php if($sClass!=''){echo "submit";}else{echo "hidden";}?>" type="submit" value="Upload!">
-<p>Note:<br/> Max size:1MB; <br/>Acceptable type: png;</p>
+<p>Note:<br/> Max size:1MB; <br/>Acceptable Type: png;</p>
 </form>
 		<?php
 		if($sClass == ''){
@@ -83,9 +94,7 @@ Upload To:<input type="text" name="class" <?php if($sClass!=''){echo'value="' . 
 		?>
 		</td></tr>
         </table>
-  <a href="../welcome.php">Back!</a>
 
-      <h2><a href = "logout.php">Sign Out</a></h2>
 	   <?php include "sidebar2.php";?>
    </body>
    

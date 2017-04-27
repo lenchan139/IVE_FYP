@@ -18,35 +18,32 @@ table, th, td {
 	   <?php include "sidebar1.php";?>
       <table id="inTable">
                  <tr id="inTable">
-                    <td id="inTable">User Id</td>
-                    <td id="inTable">Username</td>
-                    <td id="inTable">User Type</td>
-                    <td id="inTable">E-Mail</td>
-                    <td id="inTable">Edit!</td>
+                    <td id="inTable">ID</td>
+                    <td id="inTable">Title</td>
+					<td id="inTable">Description</td>
+                    <td id="inTable">Url</td>
                     
                 </tr>
               <?php
-              $sql = 'SELECT * FROM users';
+              $sql = 'SELECT * FROM notification';
             $result = mysqli_query($db,$sql);
-            $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+            //$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
             while($row = mysqli_fetch_array($result)) {
             ?>
                 <tr id="inTable">
-                    <td id="inTable"><?php echo $row['user_id']?></td>
-                    <td id="inTable"><?php echo $row['username']?></td>
-                    <td id="inTable"><?php echo $row['type']?></td>
-                    <td id="inTable"><?php echo $row['mail']?></td>
-                    <td id="inTable"><a href="editUser.php?editId=<?php echo $row['user_id']?>">EDIT</a>
+                    <td id="inTable"><?php echo $row['notify_id']?></td>
+                    <td id="inTable"><?php echo $row['title']?></td>
+                    <td id="inTable"><?php echo $row['desription']?></td>
+                    <td id="inTable"><?php echo $row['url']?></td>
+                    <!--<td id="inTable"><a href="del.php?editId=<?php// echo $row['notify_id']?>">EDIT</a>-->
                 </tr>
                 <br>
             <?php
             }
             ?>
         </table>
-  <a href="../welcome.php">Back!</a>
 
-      <h2><a href = "logout.php">Sign Out</a></h2>
 	  <?php include "sidebar2.php";?>
    </body>
    

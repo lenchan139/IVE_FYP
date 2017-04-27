@@ -10,10 +10,19 @@
 
    <head>
       <title>Welcome </title>
+	  <script src="../sorttable.js"></script>
+	  <style>
+
+	  /* Sortable tables */
+	  table.sortable thead {
+	      background-color:#eee;
+	      color:#666666;
+	      font-weight: bold;
+	      cursor: default;
+	  }
+	  </style>
    </head>
    
-<style>
-</style>
    <body>
 	   <?php include "sidebar1.php";?>
 	   <form method="POST">
@@ -34,7 +43,7 @@
 	  </select>
 	  <input type="submit" value="Search"></input>
 	   </form>
-      <table id="inTable">
+      <table id="inTable" class="sortable">
                  <tr id="inTable">
                     <td id="inTable">Class</td>
                     <td id="inTable">Student No.</td>
@@ -58,7 +67,7 @@
 				
 				$parId = $row['parent_id'];
 				$parSql = 'SELECT * FROM parent WHERE parent_id="' . $parId .'"';
-				echo $parSql;
+				
 				$parResult = mysqli_query($db,$parSql);
 				$parRow = mysqli_fetch_array($parResult,MYSQLI_ASSOC);
             ?>
@@ -74,9 +83,7 @@
 		}
             ?>
         </table>
-  <a href="../welcome.php">Back!</a>
 
-      <h2><a href = "logout.php">Sign Out</a></h2>
    </body>
    
 </html>

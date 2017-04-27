@@ -5,7 +5,6 @@
    //session_start();
    $sStud_id = $_POST['stud_id'];
 
-   echo "'" . $sStud_id ."'";
    ?>
 <html>
 
@@ -52,9 +51,6 @@
 		   src="<?php echo $outUrl;?>" /></br>
    	
 	   
-  <a href="../welcome.php">Back!</a>
-
-      <h2><a href = "logout.php">Sign Out</a></h2>
 	  <?php include "sidebar2.php";?>
    </body>
    

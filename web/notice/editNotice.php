@@ -4,6 +4,25 @@
    include("mainMenu.php");
    //session_start();
    ?>
+   <script>
+   function compare()
+   {
+       var startDt = document.getElementById("startDate").value;
+       var endDt = document.getElementById("endDate").value;
+       document.getElementById("submit").type;
+
+       if( (new Date(startDt).getTime() > new Date(endDt).getTime()))
+       {
+		  
+	       document.getElementById("submit").type = 'hidden';
+		   alert('Invaild Date!');
+		   
+       }else{
+
+	       document.getElementById("submit").type = 'submit';
+       }
+   }
+   </script>
    <?php
    //init
    
@@ -68,21 +87,20 @@
  <input type="text" name="title" value="<?php echo $oldtitle;?>">
  <br>
  Description:<br>
- <input type="text" name="des" value="<?php echo $olddes;?>">
+ <textarea name="des" cols="40"value="<?php echo $olddes;?>" rows="5"></textarea>
  <br>
  Begin:
  <br>  
- <input type="date" name="begin" value="<?php echo $oldbegin;?>">
+ <input type="date" name="begin" id="startDate" onblur="compare();" value="<?php echo $oldbegin;?>">
  <br>
  Until:<br>
- <input type="date" name="end" value="<?php echo $oldend;?>"> <br>
- Submittion Deadline:<br>
- <input type="date" name="sdl" value="<?php echo $oldsdl;?>"> <br>
+ <input type="date" name="end" id="endDate" onblur="compare();" value="<?php echo $oldend;?>"> <br>
+ Submission Deadline:<br>
+ <input type="date" name="sdl"  value="<?php echo $oldsdl;?>"> <br>
  <br><br>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Submit" id="submit">
   <h3><?php echo  $msg; $msg = ''; ?><h3>
   
-  <a href="../welcome.php">Back!</a>
 </form> 
 	   <?php include "sidebar2.php";?>
    </body>

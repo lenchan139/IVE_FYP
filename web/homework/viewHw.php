@@ -10,6 +10,17 @@
 
    <head>
       <title>Welcome </title>
+	  <script src="../sorttable.js"></script>
+	  <style>
+
+	  /* Sortable tables */
+	  table.sortable thead {
+	      background-color:#eee;
+	      color:#666666;
+	      font-weight: bold;
+	      cursor: default;
+	  }
+	  </style>
    </head>
    
 <style>
@@ -21,7 +32,7 @@ table, th, td {
 	   <br/>
 	   <a href="./addNotice.php">Add Notice</a>
 	   <br/>
-      <table>
+      <table class="sortable">
                  <tr>
                     <td>Id</td>
                     <td>Title</td>
@@ -57,7 +68,6 @@ table, th, td {
         </table>
   <a href="../welcome.php">Back!</a>
 
-      <h2><a href = "logout.php">Sign Out</a></h2>
    </body>
    
 </html>

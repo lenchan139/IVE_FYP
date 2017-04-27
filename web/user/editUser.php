@@ -69,13 +69,12 @@
   <br>
   User Type:<br>
   <input type="radio" name="newType" value="officer" <?php if($oldType == 'officer') { echo 'checked';}?>  > officer<br>
-  <input type="radio" name="newType" value="parent"<?php if($oldType == 'parent') { echo 'checked';}?>  > Parent<br>
+  <input type="radio" name="newType" value="parent"<?php if($oldType == 'parent') { echo 'checked';}?>  > Parent/Guardian<br>
   <input type="radio" name="newType" value="staff"<?php if($oldType == 'staff') { echo 'checked';}?>  > Staff 
   <br><br>
   <input type="submit" value="Submit">
   <h3><?php echo  $msg; $msg = ''; ?><h3>
   
-  <a href="../welcome.php">Back!</a>
 </form> 
 
 	   <?php include "sidebar2.php"; ?>

@@ -12,6 +12,19 @@
    </head>
    
 <style>
+a.btnDone {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
 </style>
    <body>
 	   <?php include "sidebar1.php";?>
@@ -45,7 +58,7 @@ if ((($_FILES["file"]["type"] == "image/png"))
 			move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $sInType . "_"  . $sClass);
 			echo "Store at: " . "upload/"  . $sInType . "_" . $sClass;
 			echo '<h4>Upload Sucess!</h4>';
-			echo '<br/><a href="index_' . $sInType . '.php">Done!</a>';
+			echo '<br/><a class="btnDone" href="index_' . $sInType . '.php">Done!</a>';
 			
 		}
 	}

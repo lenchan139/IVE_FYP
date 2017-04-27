@@ -15,9 +15,8 @@
    <body>
 	   <?php include "sidebar1.php";?>
 	   <br/>
-	   <a href="./addRule.php">Add Rule</a>
 	   <br/>
-      <table id="inTable">
+      <table id="inTable" class="tablesorter">
               <?php
               $sql = 'SELECT * FROM school_rule';
             $result = mysqli_query($db,$sql);
@@ -43,9 +42,7 @@
             }
             ?>
         </table>
-  <a href="../welcome.php">Back!</a>
 
-      <h2><a href = "logout.php">Sign Out</a></h2>
 	   <?php include "sidebar2.php";?>
    </body>
    

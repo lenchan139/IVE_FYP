@@ -9,10 +9,7 @@
    </head>
    
    <body>
-      <h1>Welcome <?php echo $login_session; ?></h1> 
-      <h1>User Type: <?php echo $user_type; ?></h1>
-      <h5><a href="user/index1.php" >User Adminatration</a></h5>
-      <h2><a href = "logout.php">Sign Out</a></h2>
+      <h1>Welcome! Start with the top menu!</h1> 
    </body>
    
 </html>

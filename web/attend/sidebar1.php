@@ -32,7 +32,12 @@ table, tr, td{
 		<br/>
 		<table>
 		<tr><a  id="iaHover" href="index1.php">School Day Attendance</a></tr>
+		<br/>
+			<tr><a  id="iaHover" href="addRecord.php">Add Record (School Day)</a></tr>
+			<hr/>
 		<tr><p><a  id="iaHover" href="index_event.php">Event Day Attendance</a></tr>
+			
+
 		</table>
 		</td>
 		<td valign="top" id="mainBody">

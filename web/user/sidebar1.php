@@ -31,8 +31,12 @@ table, tr, td{
 		<!--sidebar here-->
 		<br/>
 		<table>
-		<tr><a  id="iaHover" href="addUser.php">Add User</a></tr>
-		<tr><p><a  id="iaHover" href="index1.php">View&Edit User</a></tr>
+		<tr><p><a  id="iaHover" href="addUser.php">Add Staff/Officer</a></p></tr>
+		<tr><p><a  id="iaHover" href="addUser_parent.php">Add Parent/Guardian</a></p></tr>
+		<tr><p><a  id="iaHover" href="index1.php">View&Edit User</a></p></tr>
+		<hr/>
+		<tr><p><a  id="iaHover" href="addStudent.php">Add Student</a></p></tr>
+		<tr><p><a  id="iaHover" href="index_student.php">View&Edit Student</a></p></tr>
 		</table>
 		</td>
 		<td valign="top" id="mainBody">

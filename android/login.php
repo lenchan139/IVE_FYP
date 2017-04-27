@@ -1,10 +1,15 @@
 <?php 
  
- if($_SERVER['REQUEST_METHOD']=='POST'){
+ if($_SERVER['REQUEST_METHOD']=='POST' || $_SERVER['REQUEST_METHOD']=='GET' ){
  //Getting values 
+
+ $username = $_GET['username'];
+ $password = $_GET['password'];
+ if($_SERVER['REQUEST_METHOD']=='POST'){
  $username = $_POST['username'];
  $password = $_POST['password'];
- 
+}
+$password = sha1($password);
  //Creating sql query
  $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
  
@@ -17,13 +22,17 @@
  //fetching result
  $check = mysqli_fetch_array($result);
  
- //if we got some result 
+ //setup array for json
+ $jsonObj->username = $check['username'];
+ //got some result 
  if(isset($check)){
+	 $jsonObj->isVaild = true;
  //displaying success 
- echo "success";
+ echo json_encode($jsonObj);
  }else{
  //displaying failure
- echo "failure";
+ $jsonObj->isVaild = false;
+ echo json_encode($jsonObj);
  }
  mysqli_close($con);
  } 

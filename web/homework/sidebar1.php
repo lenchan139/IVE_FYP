@@ -32,7 +32,9 @@ table, tr, td{
 		<br/>
 		<table>
 		<tr><a  id="iaHover" href="addHw.php">Add Homework</a></tr>
-		<tr><p><a  id="iaHover" href="viewSubmittion.php">View Submittion</a></tr>
+		<tr><p><a  id="iaHover" href="viewSmPre.php">View Submittion</a></tr>
+			<hr/>
+		<tr><p><a  id="iaHover" href="addRecord.php">Add Record</a></tr>
 		</table>
 		</td>
 		<td valign="top" id="mainBody">

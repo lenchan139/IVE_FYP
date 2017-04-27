@@ -3,20 +3,53 @@
    include('../config.php');
    include("mainMenu.php");
    //session_start();
+   
+   $sortOpt = $_POST['sortOpt'];
+   $sortType = $_POST['sortType'];
+   
    ?>
 <html>
 
    <head>
       <title>Welcome </title>
+	  <script src="../sorttable.js"></script>
+	  <style>
+
+	  /* Sortable tables */
+	  table.sortable thead {
+	      background-color:#eee;
+	      color:#666666;
+	      font-weight: bold;
+	      cursor: default;
+	  }
+	  </style>
+	  
    </head>
    
 <style>
 </style>
    <body>
 	   <?php include "sidebar1.php";?>
+	    <br/>
 	   <br/>
-	   <br/>
-      <table id="inTable">
+	   <form method="POST" style="display: none;">
+		   Sort By:<select name="sortOpt" >
+			   			<option value="notice_id">Notice Id</option>
+			   			<option value="title">Title</option>
+			   			<option value="Description">Description</option>
+			   			<option value="post_date">Post Date</option>
+			   			<option value="begin_time">Begin</option>
+			   			<option value="end_time">Until</option>
+			   			<option value="dealine">Deadline</option>	
+					</select>
+					<select name="sortType">
+						<option value="ASC">ASC</option>
+						<option value="DESC">DESC</option>
+					</select>
+			<input type="submit" value="sort it!">
+		</form>
+	  
+      <table id="sortabletable" class="sortable">
                  <tr>
                     <td id="inTable">Notice Id</td>
                     <td id="inTable">Title</td>
@@ -30,6 +63,9 @@
                 </tr>
               <?php
               $sql = 'SELECT * FROM notice';
+			  if($sortOpt !='' && $sortType != ''){
+				  $sql = $sql . ' ORDER BY ' . $sortOpt . ' ' . $sortType;
+			  }
             $result = mysqli_query($db,$sql);
             while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
             ?>
@@ -48,10 +84,7 @@
             }
             ?>
         </table>
-  <a href="../welcome.php">Back!</a>
 
-      <h2><a href = "logout.php">Sign Out</a></h2>
-	   <?php include "sidebar2.php";?>
    </body>
    
 </html>

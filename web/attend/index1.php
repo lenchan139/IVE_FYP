@@ -11,6 +11,17 @@
 
    <head>
       <title>Welcome </title>
+	  <script src="../sorttable.js"></script>
+	  <style>
+
+	  /* Sortable tables */
+	  table.sortable thead {
+	      background-color:#eee;
+	      color:#666666;
+	      font-weight: bold;
+	      cursor: default;
+	  }
+	  </style>
    </head>
    
 <style>
@@ -39,7 +50,7 @@ table, th, td {
 	  <br/>Date<input type="date" name="date" /><br/>
 	  <input type="submit" value="Search"></input>
 	   </form>
-      <table id="inTable">
+      <table id="inTable" class="sortable">
                  <tr id="inTable">
                     <td id="inTable">Class</td>
                     <td id="inTable">No.</td>
@@ -82,9 +93,7 @@ table, th, td {
 		}
             ?>
         </table>
-  <a href="../welcome.php">Back!</a>
 
-      <h2><a href = "logout.php">Sign Out</a></h2>
 	  <?php include "sidebar2.php";?>
    </body>
    
