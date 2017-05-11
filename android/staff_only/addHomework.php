@@ -43,9 +43,9 @@ $password = sha1($password);
  		$jsonObj->error = 'PermissionDeniedException';
 	 }else if($check['type'] == 'staff' ){
 		 $user_id = $check['user_id'];
-  		$sql1 = "INSERT INTO homework(hw_class,subject,title,description,deadline,post_date) VALUES('$class', '$subject' ,'$title' ,'$description','$deadline' ,'" . 		date("Y-m-d") . "')";
+  		$sql1 = "INSERT INTO homework(poster_id, hw_class,subject,title,description,deadline,post_date) VALUES('$user_id','$class', '$subject' ,'$title' ,'$description','$deadline' ,'" . 		date("Y-m-d") . "')";
 		$result1 = mysqli_query($con,$sql1);
-		echo $sql1;
+		//echo $sql1;
  		//$row1 = mysqli_fetch_array($result1);
  		if($result1 != ''){
  			$jsonObj->status = "success";

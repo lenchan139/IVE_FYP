@@ -15,6 +15,10 @@
    </head>
    
 <style>
+  #imgGo{
+  	max-height: 400px; 
+	max-width: 400px;
+  }
 </style>
    <body>
 	   <?php include "sidebar1.php";?>
@@ -61,7 +65,7 @@
             ?>
 		</td>
 		<td id="inTable">
-			<img src="upload/timetable_<?php echo $sClass;?>">
+			<img id="imgGo" src="upload/timetable_<?php echo $sClass;?>">
 		</td>
 	<td id="inTable">
 		<?php

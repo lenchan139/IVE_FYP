@@ -54,8 +54,12 @@ if ((($_FILES["file"]["type"] == "image/png"))
 		}
 		else
 		{
-		
-			move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $sInType . "_"  . $sClass);
+		    if (file_exists("upload/" . $sInType . "_"  . $sClass )) {
+				chmod("upload/" . $sInType . "_"  . $sClass ,0755);
+		      unlink("upload/" . $sInType . "_"  . $sClass  );
+		      
+		    }
+			move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $sInType . "_"  . $sClass );
 			echo "Store at: " . "upload/"  . $sInType . "_" . $sClass;
 			echo '<h4>Upload Sucess!</h4>';
 			echo '<br/><a class="btnDone" href="index_' . $sInType . '.php">Done!</a>';

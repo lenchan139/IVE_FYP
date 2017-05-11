@@ -25,32 +25,20 @@ $password = sha1($password);
  $jsonObj->username = $check['username'];
  //got some result 
  if(isset($check)){
+
+	$attend_array = array();
 	 //save details
 	$jsonObj->type = $check['type'];
-	 if($check['type'] =='parent'){
- 		$sql1 = "SELECT * FROM student WHERE parent_id=" . $check['user_id'] ;
-		//echo $sql1;
-	    $result1 = mysqli_query($con,$sql1);
-		//$row1 = mysqli_fetch_array($result1);
-		$i =0;
-		$stud_array = array();
-
-	    //$stud_array.put("stud_id", 0);
-		    //$stud_array.put("stud_id", 1);
-			$attend_array = array();
-		while ($row1 = mysqli_fetch_array($result1)) {
-			
-		    $row_array['student_id'] =  $row1['student_id'];
-			$row_array['student_name'] = $row1['user_name'];
-			$row_array['student_class'] = $row1['class'];
-	 		$sql2 = "SELECT * FROM hw_checker WHERE stud_id=" .  $row_array['student_id'];
+	 if($check['type'] =='parent' || $check['type'] == 'staff' ){
+	 		$sql2 = "SELECT * FROM notification";
 			//echo $sql2;
 		    $result2 = mysqli_query($con,$sql2);
 			while($row2 = mysqli_fetch_array($result2)){
-			    $row_array1['record_id'] =  $row2['record_id'];
-			    $row_array1['hw_id'] =  $row2['hw_id'];
-			    $row_array1['stud_id'] =  $row2['stud_id'];
-			    $row_array1['read_time'] =  $row2['read_time'];
+			
+			    $row_array1['notify_id'] =  $row2['notify_id'];
+			    $row_array1['title'] =  $row2['title'];
+			    $row_array1['description'] =  $row2['description'];
+			    $row_array1['url'] =  $row2['url'];
 		        array_push($attend_array, $row_array1);
 			}
 
@@ -58,13 +46,11 @@ $password = sha1($password);
 			//$row1 = mysqli_fetch_array($result1);
 			$i =0;
 			
-	        array_push($stud_array, $row_array);
-			$attend_array = array();
 			$i=$i+1;
 		}
-		$jsonObj->studArray = $stud_array;
+		$jsonObj->notifyList = $attend_array;
 	    //array_push($return_arr,$row_array);
-	 }else if($check['type'] == 'staff'){
+	 }else{
 
  			$jsonObj->error = 'PermissionDeniedException';
  		
@@ -78,4 +64,4 @@ $password = sha1($password);
  echo json_encode($jsonObj);
  }
  mysqli_close($con);
- } 
+ 

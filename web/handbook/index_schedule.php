@@ -22,6 +22,10 @@
 	      font-weight: bold;
 	      cursor: default;
 	  }
+	  #imgGo{
+	  	max-height: 400px; 
+		max-width: 400px;
+	  }
 	  </style>
    </head>
    
@@ -71,7 +75,7 @@
             ?>
 		</td>
 		<td id="inTable">
-			<img src="upload/schedule_<?php echo $sClass;?>">
+			<img id="imgGo" src="upload/schedule_<?php echo $sClass;?>">
 		</td>
 	<td id="inTable">
 		<?php

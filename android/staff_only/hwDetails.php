@@ -4,16 +4,18 @@
 
  $username = $_GET['username'];
  $password = $_GET['password'];
+ $class = $_GET['class'];
  if($_SERVER['REQUEST_METHOD']=='POST'){
  $username = $_POST['username'];
  $password = $_POST['password'];
+ $class = $_GET['class'];
 }
 $password = sha1($password);
  //Creating sql query
  $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
  
  //importing dbConnect.php script 
- require_once('dbConnect.php');
+ require_once('../dbConnect.php');
  
  //executing query
  $result = mysqli_query($con,$sql);
@@ -27,8 +29,8 @@ $password = sha1($password);
  if(isset($check)){
 	 //save details
 	$jsonObj->type = $check['type'];
-	 if($check['type'] =='parent'){
- 		$sql1 = "SELECT * FROM student WHERE parent_id=" . $check['user_id'] ;
+	 if($check['type'] == 'staff'){
+ 		$sql1 = "SELECT * FROM student WHERE class='" . $class. "'";
 		//echo $sql1;
 	    $result1 = mysqli_query($con,$sql1);
 		//$row1 = mysqli_fetch_array($result1);
@@ -47,6 +49,7 @@ $password = sha1($password);
 			//echo $sql2;
 		    $result2 = mysqli_query($con,$sql2);
 			while($row2 = mysqli_fetch_array($result2)){
+
 			    $row_array1['record_id'] =  $row2['record_id'];
 			    $row_array1['hw_id'] =  $row2['hw_id'];
 			    $row_array1['stud_id'] =  $row2['stud_id'];
@@ -54,7 +57,7 @@ $password = sha1($password);
 		        array_push($attend_array, $row_array1);
 			}
 
-			$row_array['student_attend'] = $attend_array;
+			$row_array['stud_hw_record'] = $attend_array;
 			//$row1 = mysqli_fetch_array($result1);
 			$i =0;
 			
@@ -64,7 +67,7 @@ $password = sha1($password);
 		}
 		$jsonObj->studArray = $stud_array;
 	    //array_push($return_arr,$row_array);
-	 }else if($check['type'] == 'staff'){
+	 }else if($check['type'] != 'staff'){
 
  			$jsonObj->error = 'PermissionDeniedException';
  		
