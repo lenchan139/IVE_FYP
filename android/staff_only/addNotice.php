@@ -45,7 +45,7 @@ $password = sha1($password);
 		 $user_id = $check['user_id'];
   		$sql1 = "INSERT INTO notice(poster_id,title,description,begin_time,end_time,submit_deadline,post_date) VALUES($user_id，'$title', '$description' ,'$begin_time' ,'$end_time','$deadline' ,'" . 		date("Y-m-d") . "')";
 		$result1 = mysqli_query($con,$sql1);
-		echo $sql1;
+		//echo $sql1;
  		//$row1 = mysqli_fetch_array($result1);
  		if($result1 != ''){
  			$jsonObj->status = "success";

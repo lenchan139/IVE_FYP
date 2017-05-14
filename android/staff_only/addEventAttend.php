@@ -40,7 +40,7 @@ $password = sha1($password);
 	 }else if($check['type'] == 'staff' ){
 		 $user_id = $check['user_id'];
   		$sql1 = "INSERT INTO event_attend(parent_id,stud_id,event_id,att_date) VALUES($pid, $sid  , $eid , '" . date("Y-m-d") . "')";
-		echo $sql1;
+		//echo $sql1;
 		$result1 = mysqli_query($con,$sql1);
  		//$row1 = mysqli_fetch_array($result1);
  		if($result1 != ''){
