@@ -106,7 +106,6 @@
   <input type="submit" value="Submit">
   <h3><?php echo  $msg; $msg = ''; ?><h3>
   
-  <a href="../welcome.php">Back!</a>
 </form> 
 	   <?php include "sidebar2.php";?>
    </body>

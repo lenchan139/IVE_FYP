@@ -19,7 +19,7 @@
         if($new1 != ''&& $new2 != '' && $new3 != '' && $new4 != '' && $new5!=''){
             $sql = "INSERT INTO homework(poster_id,title,description,post_date,hw_class,subject,deadline) VALUES($poster_id, '$new1' , '$new2','" . date("Y-m-d") . "', '$new3','$new4','$new5')";
             $result = mysqli_query($db,$sql);
-			echo $sql;
+			//echo $sql;
             if($result != ''){
                 $msg =  'Insert Success!';
             }else{

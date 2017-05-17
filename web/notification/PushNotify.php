@@ -15,7 +15,7 @@
         
         if($newtitle != '' && $newdes != '' && $newurl != ''){
             $sql = "INSERT INTO notification(title,desription,url) VALUES('$newtitle', '$newdes' , '$newurl')";
-			echo $sql;
+			//echo $sql;
             $result = mysqli_query($db,$sql);
             if($result != ''){
                 $msg =  'Insert Success!';
