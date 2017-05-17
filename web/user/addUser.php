@@ -78,7 +78,7 @@
   <br>
   <div class="staff1" id="staff1" >
   Real Name:
-  <input type="text" pattern="[a-zA-Z\s]+" class="realname" required>
+  <input type="text" pattern="[a-zA-Z\s]+" class="realname"  name="realname" required>
   Class: <select name="class" class="class" required>
     <option value="">  </option>
        <?php
