@@ -37,7 +37,8 @@ $password = sha1($password);
 			
 			    $row_array1['user_id'] =  $row2['user_id'];
 			    $row_array1['mail'] =  $row2['mail'];
-				$sql21 = "SELECT * FROM staff";
+				$x2 = $row2['user_id'];
+				$sql21 = "SELECT * FROM staff WHERE staff_id=" . $x2;
 				$result21 = mysqli_query($con,$sql21);
 				$row21 = mysqli_fetch_array($result21);
 				$row_array1['staff_name'] = $row21['staff_name'];
