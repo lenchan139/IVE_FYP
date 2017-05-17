@@ -73,8 +73,8 @@
   <input type="email" name="newMail" required>
   <br>
   User Type:<br>
-  <input type="radio" class="o1" name="newType" value="officer" onClick="$('#staff1').hide();" checked> Officer<br>
-  <input type="radio" class="o2" name="newType" value="staff" $('#staff1').hide();> Staff 
+  <input type="radio" class="o1" name="newType" value="officer" onClick="$('#staff1').hide();"> Officer<br>
+  <input type="radio" class="o2" name="newType" checked value="staff" $('#staff1').hide();> Staff 
   <br>
   <div class="staff1" id="staff1" >
   Real Name:
